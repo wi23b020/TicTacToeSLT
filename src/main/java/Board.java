@@ -5,6 +5,9 @@ public class Board {
         return cells;
     }
 
+    public char[][] cells;
+
+
     public Board() {
         cells = new char[3][3];
         clear();
