@@ -1,5 +1,9 @@
 public class Board {
-    public char[][] cells;
+    private char[][] cells;
+
+    public char[][] getCells() {
+        return cells;
+    }
 
     public Board() {
         cells = new char[3][3];
