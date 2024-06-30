@@ -28,7 +28,7 @@ public class TicTacToe {
     public Board getBoard() {
         return board;
     }
-
+  
     public void start(Scanner scanner) {
         while (!hasWinner() && !board.isFull()) {
             board.print();
@@ -39,6 +39,7 @@ public class TicTacToe {
         }
         board.print();
         if (hasWinner()) {
+
             System.out.println("Spieler " + currentPlayer.getMarker() + " gewinnt!");
         } else {
             System.out.println("Das Spiel endet unentschieden.");
@@ -56,6 +57,7 @@ public class TicTacToe {
 
     private boolean checkRows() {
         for (int i = 0; i < 3; i++) {
+
             if (board.getCells()[i][0] == currentPlayer.getMarker() &&
                     board.getCells()[i][1] == currentPlayer.getMarker() &&
                     board.getCells()[i][2] == currentPlayer.getMarker()) {
@@ -77,6 +79,7 @@ public class TicTacToe {
     }
 
     private boolean checkDiagonals() {
+
         return (board.getCells()[0][0] == currentPlayer.getMarker() &&
                 board.getCells()[1][1] == currentPlayer.getMarker() &&
                 board.getCells()[2][2] == currentPlayer.getMarker()) ||
@@ -91,11 +94,13 @@ public class TicTacToe {
             System.out.println("Spieler " + currentPlayer.getMarker() + ", bitte gib deine Zeile (0-2) ein:");
             row = scanner.nextInt();
             System.out.println("Spieler " + currentPlayer.getMarker() + ", bitte gib deine Spalte (0-2) ein:");
+
             col = scanner.nextInt();
             if (row >= 0 && row < 3 && col >= 0 && col < 3 && board.isCellEmpty(row, col)) {
                 board.place(row, col, currentPlayer.getMarker());
                 break;
             } else {
+
                 System.out.println("Ungültiger Zug. Bitte versuche es erneut.");
             }
         }
