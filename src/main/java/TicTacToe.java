@@ -28,7 +28,7 @@ public class TicTacToe {
     public Board getBoard() {
         return board;
     }
-
+  
     public void start(Scanner scanner) {
         while (!hasWinner() && !board.isFull()) {
             board.print();
@@ -56,6 +56,7 @@ public class TicTacToe {
 
     private boolean checkRows() {
         for (int i = 0; i < 3; i++) {
+
             if (board.getCells()[i][0] == currentPlayer.getMarker() &&
                     board.getCells()[i][1] == currentPlayer.getMarker() &&
                     board.getCells()[i][2] == currentPlayer.getMarker()) {
@@ -67,6 +68,7 @@ public class TicTacToe {
 
     private boolean checkColumns() {
         for (int i = 0; i < 3; i++) {
+
             if (board.getCells()[0][i] == currentPlayer.getMarker() &&
                     board.getCells()[1][i] == currentPlayer.getMarker() &&
                     board.getCells()[2][i] == currentPlayer.getMarker()) {
@@ -101,14 +103,12 @@ public class TicTacToe {
         }
     }
 
-
     public static void main(String[] args) {
         TicTacToe game = new TicTacToe();
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Willkommen bei Tic-Tac-Toe!");
         game.start(scanner);
-
     }
 }
 
