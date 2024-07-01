@@ -29,6 +29,7 @@ public class TicTacToe {
         return board;
     }
 
+
     public void start(Scanner scanner) {
         while (!hasWinner() && !board.isFull()) {
             board.print();
@@ -39,6 +40,7 @@ public class TicTacToe {
         }
         board.print();
         if (hasWinner()) {
+
             System.out.println("Player " + currentPlayer.getMarker() + " is the winner!");
         } else {
             System.out.println("Draw!");
@@ -56,6 +58,7 @@ public class TicTacToe {
 
     private boolean checkRows() {
         for (int i = 0; i < 3; i++) {
+
             if (board.getCells()[i][0] == currentPlayer.getMarker() &&
                     board.getCells()[i][1] == currentPlayer.getMarker() &&
                     board.getCells()[i][2] == currentPlayer.getMarker()) {
@@ -67,6 +70,7 @@ public class TicTacToe {
 
     private boolean checkColumns() {
         for (int i = 0; i < 3; i++) {
+
             if (board.getCells()[0][i] == currentPlayer.getMarker() &&
                     board.getCells()[1][i] == currentPlayer.getMarker() &&
                     board.getCells()[2][i] == currentPlayer.getMarker()) {
@@ -88,6 +92,7 @@ public class TicTacToe {
     protected void makeMove(Scanner scanner) {
         int row, col;
         while (true) {
+
             System.out.println("Player " + currentPlayer.getMarker() + ", insert row (0-2):");
             row = scanner.nextInt();
             System.out.println("Player " + currentPlayer.getMarker() + ", insert column (0-2):");
@@ -96,6 +101,7 @@ public class TicTacToe {
                 board.place(row, col, currentPlayer.getMarker());
                 break;
             } else {
+
                 System.out.println("Illegal move");
             }
         }
