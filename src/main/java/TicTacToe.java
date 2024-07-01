@@ -39,9 +39,9 @@ public class TicTacToe {
         }
         board.print();
         if (hasWinner()) {
-            System.out.println("Spieler " + currentPlayer.getMarker() + " gewinnt!");
+            System.out.println("Player " + currentPlayer.getMarker() + " is the winner!");
         } else {
-            System.out.println("Das Spiel endet unentschieden.");
+            System.out.println("Draw!");
         }
     }
 
@@ -88,15 +88,15 @@ public class TicTacToe {
     protected void makeMove(Scanner scanner) {
         int row, col;
         while (true) {
-            System.out.println("Spieler " + currentPlayer.getMarker() + ", bitte gib deine Zeile (0-2) ein:");
+            System.out.println("Player " + currentPlayer.getMarker() + ", insert row (0-2):");
             row = scanner.nextInt();
-            System.out.println("Spieler " + currentPlayer.getMarker() + ", bitte gib deine Spalte (0-2) ein:");
+            System.out.println("Player " + currentPlayer.getMarker() + ", insert column (0-2):");
             col = scanner.nextInt();
             if (row >= 0 && row < 3 && col >= 0 && col < 3 && board.isCellEmpty(row, col)) {
                 board.place(row, col, currentPlayer.getMarker());
                 break;
             } else {
-                System.out.println("Ungültiger Zug. Bitte versuche es erneut.");
+                System.out.println("Illegal move");
             }
         }
     }
@@ -106,7 +106,7 @@ public class TicTacToe {
         TicTacToe game = new TicTacToe();
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Willkommen bei Tic-Tac-Toe!");
+        System.out.println("Welcome to TicTacToe");
         game.start(scanner);
 
     }
